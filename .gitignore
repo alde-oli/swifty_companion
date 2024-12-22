@@ -1,4 +1,13 @@
+# Flutter/Dart
+*.lock
+.idea/
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
 .env
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/

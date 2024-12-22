@@ -1,16 +1,58 @@
-# swifty_companion
+V```markdown
+# Swifty Companion
 
-A new Flutter project.
+## Description
+A mobile application built with Flutter to explore user profiles from the 42 API.
 
-## Getting Started
+## Key Features
+1. **Login Page**: A page to enter the user's login.
+2. **Error Notifications**: A top-screen bubble notification system for displaying errors like "Invalid username" or "Network error."
+3. **User Page with Tabs**:
+   - **Main Tab**: Displays profile picture, first name, last name, title, login, level with progress bar, and current cursus (with a switchable option if multiple cursus exist).
+   - **Projects Tab**: Displays completed projects, failed projects, and projects in progress or pending evaluation.
+   - **Achievements Tab**: Lists the user's achievements.
+   - **Details Tab**: Shows detailed information like first name, last name, title, campus, location, wallet, grade, rank, and skills with percentages.
+4. **OAuth2 Token Management**: Handles token fetching and refresh when expired.
+5. **Responsive Design**: Adapts to all screen formats and sizes.
 
-This project is a starting point for a Flutter application.
+## Project Structure
+```
+lib/
+├── main.dart
+├── screens/
+│   ├── login_screen.dart
+│   ├── user_screen.dart
+│   ├── tabs/
+│   │   ├── main_tab.dart
+│   │   ├── projects_tab.dart
+│   │   ├── achievements_tab.dart
+│   │   ├── details_tab.dart
+├── services/
+│   ├── api_service.dart
+│   ├── token_service.dart
+├── widgets/
+│   ├── snackbar.dart
+│   ├── progress_bar.dart
+│   ├── user_avatar.dart
+```
 
-A few resources to get you started if this is your first Flutter project:
+## How to Run the Project
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/USERNAME/swifty_companion.git
+   ```
+2. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+3. Run the application:
+   ```bash
+   flutter run
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Contributions
+Contributions are welcome! Please open an issue or submit a pull request to contribute to the project.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+This project is licensed under the MIT License.
+```
