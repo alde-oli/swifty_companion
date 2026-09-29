@@ -1,17 +1,7 @@
 <!-- YoRHa archive -->
-```
-▸ YoRHa // ARCHIVE — SWIFTY_COMPANION
-```
+<p align="center"><img src=".github/yorha-header.svg" width="100%" alt="YoRHa // ARCHIVE — swifty_companion · Type: 42 Lausanne project · solo · Stack: Flutter · Dart · http · flutter_dotenv · 42 Intra API v2 (OAuth2) · Status: □ ARCHIVED · early prototype"></p>
 
 A Flutter app that looks up a 42 student by login and shows their level, skills and projects from the 42 Intra API.
-
-![Flutter](https://img.shields.io/badge/Flutter-Dart-4e4b42?style=flat-square) ![42 API](https://img.shields.io/badge/42_API-v2-dad4bb?style=flat-square)
-
-| UNIT DATA | |
-|---|---|
-| Type | 42 Lausanne project · solo |
-| Stack | Flutter · Dart · `http` · `flutter_dotenv` · 42 Intra API v2 (OAuth2) |
-| Status | □ ARCHIVED · early prototype |
 
 ## ▸ Overview
 You type in a 42 login. The app gets an OAuth2 token from the 42 Intra API with the client-credentials flow, calls `GET /v2/users/:login` and shows a summary of the profile.
