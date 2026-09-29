@@ -1,56 +1,54 @@
-# Swifty Companion
+<!-- YoRHa archive -->
+```
+▸ YoRHa // ARCHIVE — SWIFTY_COMPANION
+```
 
-## Description
-A mobile application built with Flutter to explore user profiles from the 42 API.
+A Flutter app that looks up a 42 student by login and shows their level, skills and projects from the 42 Intra API.
 
-## Key Features
-1. **Login Page**: A page to enter the user's login.
-2. **Error Notifications**: A top-screen bubble notification system for displaying errors like "Invalid username" or "Network error."
-3. **User Page with Tabs**:
-   - **Main Tab**: Displays profile picture, first name, last name, title, login, level with progress bar, and current cursus (with a switchable option if multiple cursus exist).
-   - **Projects Tab**: Displays completed projects, failed projects, and projects in progress or pending evaluation.
-   - **Achievements Tab**: Lists the user's achievements.
-   - **Details Tab**: Shows detailed information like first name, last name, title, campus, location, wallet, grade, rank, and skills with percentages.
-4. **OAuth2 Token Management**: Handles token fetching and refresh when expired.
-5. **Responsive Design**: Adapts to all screen formats and sizes.
+![Flutter](https://img.shields.io/badge/Flutter-Dart-4e4b42?style=flat-square) ![42 API](https://img.shields.io/badge/42_API-v2-dad4bb?style=flat-square)
 
-## Project Structure
+| UNIT DATA | |
+|---|---|
+| Type | 42 Lausanne project · solo |
+| Stack | Flutter · Dart · `http` · `flutter_dotenv` · 42 Intra API v2 (OAuth2) |
+| Status | □ ARCHIVED · early prototype |
+
+## ▸ Overview
+You type in a 42 login. The app gets an OAuth2 token from the 42 Intra API with the client-credentials flow, calls `GET /v2/users/:login` and shows a summary of the profile.
+The code is small and easy to follow: one API service, a login screen and a details screen, connected with named routes.
+
+## ▸ Features
+- Login search screen. Errors ("User not found", network or API failures, empty input) appear in a snackbar
+- OAuth2 client-credentials token read from `CLIENT_ID` / `CLIENT_SECRET` in a `.env` file (`flutter_dotenv`)
+- Details screen: login, email, level, skills with their levels, and every project with its status and final mark
+- Flutter project scaffold for Android, iOS, web, Linux, macOS and Windows
+
+## ▸ Usage
+Create a 42 Intra API application, then add its credentials to a `.env` file:
+
+```bash
+CLIENT_ID=<your 42 app uid>
+CLIENT_SECRET=<your 42 app secret>
+```
+
+```bash
+flutter pub get
+flutter run
+```
+
+## ▸ Structure
 ```
 lib/
-├── main.dart
-├── screens/
-│   ├── login_screen.dart
-│   ├── user_screen.dart
-│   ├── tabs/
-│   │   ├── main_tab.dart
-│   │   ├── projects_tab.dart
-│   │   ├── achievements_tab.dart
-│   │   ├── details_tab.dart
-├── services/
-│   ├── api_service.dart
-│   ├── token_service.dart
-├── widgets/
-│   ├── snackbar.dart
-│   ├── progress_bar.dart
-│   ├── user_avatar.dart
+├── main.dart                     app entry, dotenv loading, routes
+├── services/api_service.dart     OAuth2 token + /v2/users/:login
+└── screens/
+    ├── login_screen.dart         login input and error snackbar
+    └── user_details_screen.dart  level, skills, projects
 ```
 
-## How to Run the Project
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/USERNAME/swifty_companion.git
-   ```
-2. Install dependencies:
-   ```bash
-   flutter pub get
-   ```
-3. Run the application:
-   ```bash
-   flutter run
-   ```
+## ▸ Notes
+- `pubspec.yaml` declares the asset as `assets/.env`, but `main.dart` loads `.env`. Make them match (put the file where the loader looks and declare that path) before running.
+- It's a prototype: the app requests a new token on every search, doesn't refresh tokens, prints the token to the console, and reads level and skills from the first cursus only.
 
-## Contributions
-Contributions are welcome! Please open an issue or submit a pull request to contribute to the project.
-
-## License
-This project is licensed under the MIT License.
+---
+<sub>▸ Archived by UNIT ALDE-OLI · [profile](https://github.com/alde-oli)</sub>
