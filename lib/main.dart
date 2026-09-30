@@ -5,7 +5,7 @@ import 'screens/user_details_screen.dart';
 
 
 void main() async {
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: "assets/.env");
 
   runApp(SwiftyCompanionApp());
 }

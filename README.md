@@ -14,7 +14,7 @@ The code is small and easy to follow: one API service, a login screen and a deta
 - Flutter project scaffold for Android, iOS, web, Linux, macOS and Windows
 
 ## ▸ Usage
-Create a 42 Intra API application, then add its credentials to a `.env` file:
+Create a 42 Intra API application, then copy `assets/.env.example` to `assets/.env` and fill in its credentials:
 
 ```bash
 CLIENT_ID=<your 42 app uid>
@@ -37,7 +37,6 @@ lib/
 ```
 
 ## ▸ Notes
-- `pubspec.yaml` declares the asset as `assets/.env`, but `main.dart` loads `.env`. Make them match (put the file where the loader looks and declare that path) before running.
 - It's a prototype: the app requests a new token on every search, doesn't refresh tokens, prints the token to the console, and reads level and skills from the first cursus only.
 
 ---
